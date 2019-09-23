@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="toolbar" type="id" />
+    <item name="fl_container" type="id" />
+    <item name="view_toolbar_divider" type="id" />
+
+    <item name="rv_container" type="id" />
+    <item name="ll_container" type="id" />
+    <item name="vp_container" type="id" />
+    <item name="refresh_layout" type="id" />
+    <item name="tab_layout" type="id" />
+
+    <item name="fl_shell_container" type="id" />
+
+</resources>

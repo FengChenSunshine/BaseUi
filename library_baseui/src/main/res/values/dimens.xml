@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="default_empty_layout_margin_bottom">5dp</dimen>
+    <dimen name="default_empty_layout_content_text_size">16sp</dimen>
+
+    <dimen name="default_load_more_padding">10dp</dimen>
+    <dimen name="default_load_more_text_left_padding">10dp</dimen>
+
+</resources>

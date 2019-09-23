@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="LoadingStyle" format="reference" />
+
+    <declare-styleable name="LoadingView">
+        <attr name="loading_view_size" format="dimension" />
+        <attr name="android:color" />
+    </declare-styleable>
+
+    <declare-styleable name="BottomNavigationMenu">
+        <attr name="menu_name" format="string" />
+        <attr name="menu_selected_color" format="color" />
+        <attr name="menu_unselected_color" format="color" />
+        <attr name="menu_selected_size" format="dimension" />
+        <attr name="menu_unselected_size" format="dimension" />
+        <attr name="menu_selected_icon" format="reference" />
+        <attr name="menu_unselected_icon" format="reference" />
+    </declare-styleable>
+
+</resources>
