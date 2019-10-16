@@ -29,6 +29,9 @@ public class BottomNavigationLayout extends LinearLayout implements OnMenuChildC
     private ViewPager.SimpleOnPageChangeListener mOnPageChangeListener;
     private int mCurrentPosition;//当前页面位置.
 
+    private int mFeatureMenuPosition = -1;//设置了需要使用android:clipChildren="false"的menu索引，点击时跳转新界面，而不是切换界面.
+    private OnFeatureMenuClickListener mOnFeatureMenuClickListener;
+
     public BottomNavigationLayout(Context context) {
         this(context, null);
     }
@@ -80,9 +83,23 @@ public class BottomNavigationLayout extends LinearLayout implements OnMenuChildC
         mVpContainer.addOnPageChangeListener(mOnPageChangeListener);
     }
 
+    public void setFeatureMenu(int featureMenuPosition, OnFeatureMenuClickListener listener) {
+        this.mFeatureMenuPosition = featureMenuPosition;
+        this.mOnFeatureMenuClickListener = listener;
+    }
+
     @Override
     public void onMenuChildClick(int position) {
-        changeChildStatus(position, true);
+        if (mFeatureMenuPosition == position) {
+            if (null != mOnFeatureMenuClickListener) {
+                ((BottomNavigationMenu) getChildAt(position)).playAnimation();
+                mOnFeatureMenuClickListener.onFeatureMenuClick();
+            }
+        } else {
+            mVpContainer.removeOnPageChangeListener(mOnPageChangeListener);
+            changeChildStatus(position, true);
+            mVpContainer.addOnPageChangeListener(mOnPageChangeListener);
+        }
     }
 
     /**
@@ -93,7 +110,11 @@ public class BottomNavigationLayout extends LinearLayout implements OnMenuChildC
         if (position != mCurrentPosition) {
 
             if (isClickTrigger) {
-                mVpContainer.setCurrentItem(position);
+                if (mFeatureMenuPosition > -1 && position > mFeatureMenuPosition) {
+                    mVpContainer.setCurrentItem(position - 1);
+                } else {
+                    mVpContainer.setCurrentItem(position);
+                }
             }
 
             ((BottomNavigationMenu) getChildAt(mCurrentPosition)).setMenuSelected(false, false);

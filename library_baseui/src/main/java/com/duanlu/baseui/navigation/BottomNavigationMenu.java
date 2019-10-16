@@ -120,7 +120,7 @@ public class BottomNavigationMenu extends LinearLayout implements View.OnClickLi
     /**
      * 播放动画.
      */
-    private void playAnimation() {
+    protected void playAnimation() {
         ObjectAnimator scaleX = ObjectAnimator.ofFloat(mIvMenuIcon
                 , "scaleX", 1.0f, 0.9f, 1.1f, 1.0f);
         ObjectAnimator scaleY = ObjectAnimator.ofFloat(mIvMenuIcon
