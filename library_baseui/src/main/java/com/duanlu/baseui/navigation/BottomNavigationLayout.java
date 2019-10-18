@@ -76,7 +76,11 @@ public class BottomNavigationLayout extends LinearLayout implements OnMenuChildC
             mOnPageChangeListener = new ViewPager.SimpleOnPageChangeListener() {
                 @Override
                 public void onPageSelected(int position) {
-                    changeChildStatus(position, false);
+                    if (mFeatureMenuPosition > -1 && position >= mFeatureMenuPosition) {
+                        changeChildStatus(position + 1, false);
+                    } else {
+                        changeChildStatus(position, false);
+                    }
                 }
             };
         }

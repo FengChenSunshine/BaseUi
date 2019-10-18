@@ -13,10 +13,13 @@ Add it in your root build.gradle at the end of repositories:
 
 ### Step 2. Add the dependency
     dependencies {
-	    implementation 'com.github.FengChenSunshine:BaseUi:1.0.1'
+	    implementation 'com.github.FengChenSunshine:BaseUi:1.0.2'
 	}
 
 ## 历史版本
+
+### 1.0.2
+1.修复设置浮动按钮后滑动ViewPager时浮动按钮之后的按钮选择异常的问题。
 
 ### 1.0.1
 1.BottomNavigationLayout支持设置浮动按钮，使用该功能可以实现中间按钮超出导航栏显示。
