@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
-apply from: 'config-aar.gradle'
-//apply plugin: 'com.github.dcendents.android-maven'
-//group ='com.github.FengChenSunshine'
+//apply from: 'config-aar.gradle'
+apply plugin: 'com.github.dcendents.android-maven'
+group ='com.github.FengChenSunshine'
 
 def config = rootProject.ext.android
 def library = rootProject.ext.library
