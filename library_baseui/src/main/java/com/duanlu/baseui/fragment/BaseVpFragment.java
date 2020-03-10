@@ -1,14 +1,15 @@
 package com.duanlu.baseui.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.widget.LinearLayout;
+
+import androidx.annotation.Nullable;
+import androidx.viewpager.widget.ViewPager;
 
 import com.duanlu.baseui.R;
 import com.duanlu.baseui.adapter.CommonVpAdapter;
 import com.fengchen.uistatus.annotation.UiStatus;
+import com.google.android.material.tabs.TabLayout;
 
 /********************************
  * @name BaseVpFragment

@@ -6,13 +6,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IdRes;
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.view.menu.MenuBuilder;
-import android.support.v7.widget.AppCompatTextView;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.Gravity;
@@ -20,6 +13,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.DrawableRes;
+import androidx.annotation.IdRes;
+import androidx.annotation.Nullable;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.duanlu.baseui.R;
 
@@ -40,11 +41,12 @@ public class CommonToolbar extends Toolbar {
     private boolean isUseCenterTitle = true;
 
     public CommonToolbar(Context context) {
-        this(context, null, android.support.v7.appcompat.R.attr.toolbarStyle);
+
+        this(context, null, androidx.appcompat.R.attr.toolbarStyle);
     }
 
     public CommonToolbar(Context context, @Nullable AttributeSet attrs) {
-        this(context, attrs, android.support.v7.appcompat.R.attr.toolbarStyle);
+        this(context, attrs, androidx.appcompat.R.attr.toolbarStyle);
     }
 
     public CommonToolbar(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {

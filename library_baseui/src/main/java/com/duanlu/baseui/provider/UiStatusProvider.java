@@ -1,6 +1,6 @@
 package com.duanlu.baseui.provider;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 
 import com.fengchen.uistatus.UiStatusController;
 

@@ -3,12 +3,13 @@ package com.duanlu.baseui.fragment;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.duanlu.baseui.BaseConstants;
 import com.duanlu.baseui.R;
@@ -33,15 +34,23 @@ public class ShellActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         if (null != bundle) {
+            int orientation = bundle.getInt(BaseConstants.EXTRA_ORIENTATION, Integer.MAX_VALUE);
+            int curOrientation = getRequestedOrientation();
+            if (Integer.MAX_VALUE != orientation//启动标记需要设置orientation.
+                    && curOrientation != orientation//当前orientation不是目标orientation.
+                    && isCanSetRequestedOrientation()) {//系统允许设置orientation.
+                //设置屏幕方向.
+                setRequestedOrientation(orientation);
+                //设置票屏幕方向这里会导致Activity重建,
+                //从而导致Fragment里onCreateView里多次调用initView方法.
+                //所以这里直接return等待重建之后再继续初始化.
+                return;
+            }
+
             mExtraFragmentClassName = bundle.getString(BaseConstants.EXTRA_FRAGMENT_CLASS_NAME);
             int themeResId = bundle.getInt(BaseConstants.EXTRA_THEME_RES_ID);
             if (themeResId > 0) {
                 setTheme(themeResId);
-            }
-            int orientation = bundle.getInt(BaseConstants.EXTRA_ORIENTATION, Integer.MAX_VALUE);
-            if (Integer.MAX_VALUE != orientation) {
-                //设置屏幕方向.
-                setRequestedOrientation(orientation);
             }
         }
         //设置视图.
@@ -68,10 +77,12 @@ public class ShellActivity extends AppCompatActivity {
      */
     @Override
     public void setRequestedOrientation(int orientation) {
-        if (Build.VERSION.SDK_INT != Build.VERSION_CODES.O
-                && !ActivityHelp.isTranslucentOrFloating(this)) {
-            super.setRequestedOrientation(orientation);
-        }
+        super.setRequestedOrientation(orientation);
+    }
+
+    private boolean isCanSetRequestedOrientation() {
+        return Build.VERSION.SDK_INT != Build.VERSION_CODES.O
+                || !ActivityHelp.isTranslucentOrFloating(this);
     }
 
     private Fragment getFragment() {

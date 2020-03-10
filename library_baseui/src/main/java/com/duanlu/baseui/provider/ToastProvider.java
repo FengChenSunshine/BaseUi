@@ -1,6 +1,6 @@
 package com.duanlu.baseui.provider;
 
-import android.support.annotation.IntRange;
+import androidx.annotation.IntRange;
 
 /********************************
  * @name ToastProvider

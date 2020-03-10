@@ -3,11 +3,12 @@ package com.duanlu.baseui.activity;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.IntRange;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.IntRange;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.View;
 
 import com.duanlu.baseui.BaseConstants;
@@ -52,10 +53,17 @@ abstract class RootActivity extends AppCompatActivity
         Bundle bundle = getIntent().getExtras();
         if (null != bundle) {
             int orientation = bundle.getInt(BaseConstants.EXTRA_ORIENTATION, Integer.MAX_VALUE);
-            if (Integer.MAX_VALUE != orientation) {
+            int curOrientation = getRequestedOrientation();
+            if (Integer.MAX_VALUE != orientation//启动标记需要设置orientation.
+                    && curOrientation != orientation//当前orientation不是目标orientation.
+                    && isCanSetRequestedOrientation()) {//系统允许设置orientation.
                 //设置屏幕方向.
                 setRequestedOrientation(orientation);
+                //设置票屏幕方向这里会导致Activity重建,
+                //所以这里直接return等待重建之后再继续初始化.
+                return;
             }
+
             this.parseIntentBundle(bundle);
         }
         //设置视图.
@@ -104,6 +112,11 @@ abstract class RootActivity extends AppCompatActivity
                 && !ActivityHelp.isTranslucentOrFloating(this)) {
             super.setRequestedOrientation(orientation);
         }
+    }
+
+    private boolean isCanSetRequestedOrientation() {
+        return Build.VERSION.SDK_INT != Build.VERSION_CODES.O
+                || !ActivityHelp.isTranslucentOrFloating(this);
     }
 
     @Override

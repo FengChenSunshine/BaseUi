@@ -34,9 +34,11 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation library.junit
+    testImplementation library.test_junit
+    androidTestImplementation library.test_ext_junit
     androidTestImplementation library.test_runner
     androidTestImplementation library.test_espresso_core
 
     implementation project(":library_baseui")
+
 }

@@ -30,9 +30,21 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation library.junit
+    testImplementation library.test_junit
+    androidTestImplementation library.test_ext_junit
     androidTestImplementation library.test_runner
     androidTestImplementation library.test_espresso_core
+
+    //RecyclerView.
+    api library.recyclerview
+    //appcompat.
+    api library.appcompat
+    //约束布局.
+    api library.constraintlayout
+    //Design库.
+    api library.material
+    //SwipeRefreshLayout.
+    api library.swiperefreshlayout
 
     //工具库.
     implementation library.utils
@@ -40,14 +52,4 @@ dependencies {
     api library.uiStatus
     //资源库.
     api library.resource
-
-    //RecyclerView.
-    api library.support_recyclerview
-    //appcompat.
-    api library.support_appcompat
-    //约束布局.
-    api library.constraint_layout
-    //Design库.
-    api library.support_design
-
 }

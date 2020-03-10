@@ -1,6 +1,6 @@
 package com.duanlu.baseui.fragment;
 
-import android.support.annotation.CallSuper;
+import androidx.annotation.CallSuper;
 
 import com.fengchen.uistatus.annotation.UiStatus;
 

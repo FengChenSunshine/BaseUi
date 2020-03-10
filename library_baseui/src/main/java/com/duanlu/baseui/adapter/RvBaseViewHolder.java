@@ -1,12 +1,6 @@
 package com.duanlu.baseui.adapter;
 
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.IdRes;
-import android.support.annotation.StringRes;
-import android.support.v7.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.TextUtils;
 import android.util.SparseArray;
@@ -14,6 +8,13 @@ import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
+
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.IdRes;
+import androidx.annotation.StringRes;
+import androidx.recyclerview.widget.RecyclerView;
 
 /********************************
  * @name RvBaseViewHolder
