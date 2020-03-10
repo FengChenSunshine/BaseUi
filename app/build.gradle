@@ -40,5 +40,6 @@ dependencies {
     androidTestImplementation library.test_espresso_core
 
     implementation project(":library_baseui")
+//    implementation 'com.github.FengChenSunshine:BaseUi:1.0.3'
 
 }
