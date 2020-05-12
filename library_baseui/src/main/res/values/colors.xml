@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="default_empty_layout_content_text_color">@color/widget_primary</color>
+    <color name="default_empty_layout_content_text_color">@color/resource_widget_primary</color>
 
 </resources>

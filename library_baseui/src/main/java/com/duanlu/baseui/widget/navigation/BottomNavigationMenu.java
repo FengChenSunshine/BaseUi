@@ -1,4 +1,4 @@
-package com.duanlu.baseui.navigation;
+package com.duanlu.baseui.widget.navigation;
 
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;

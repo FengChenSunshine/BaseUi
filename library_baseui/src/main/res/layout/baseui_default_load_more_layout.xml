@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/common_shape_white"
+    android:background="@drawable/resource_shape_white"
     android:gravity="center"
     android:padding="@dimen/default_load_more_padding">
 
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/default_load_more_text_left_padding"
-        android:textSize="@dimen/text_size_x_small_dp"
+        android:textSize="@dimen/resource_text_size_x_small"
         android:visibility="gone"
         tools:text="点击加载更多" />
 </LinearLayout>

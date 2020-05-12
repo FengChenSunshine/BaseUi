@@ -10,11 +10,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.duanlu.adapter.CommonLoadMoreLayout;
+import com.duanlu.adapter.DefaultEmptyView;
+import com.duanlu.adapter.LoadMoreHelp;
+import com.duanlu.adapter.RvBaseAdapter;
 import com.duanlu.baseui.R;
-import com.duanlu.baseui.adapter.CommonLoadMoreLayout;
-import com.duanlu.baseui.adapter.DefaultEmptyView;
-import com.duanlu.baseui.adapter.LoadHelp;
-import com.duanlu.baseui.adapter.RvBaseAdapter;
 
 /********************************
  * @name BaseRvFragment
@@ -25,7 +25,7 @@ import com.duanlu.baseui.adapter.RvBaseAdapter;
  * @describe 一个列表类型的Fragment基类.
  ********************************/
 public abstract class BaseRvFragment<T> extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener
-        , LoadHelp.OnLoadMoreListener {
+        , LoadMoreHelp.OnLoadMoreListener {
 
     protected SwipeRefreshLayout mRefreshLayout;
     protected LinearLayout mLlContainer;

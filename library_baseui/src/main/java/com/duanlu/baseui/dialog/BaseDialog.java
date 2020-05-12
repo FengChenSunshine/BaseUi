@@ -37,7 +37,7 @@ public abstract class BaseDialog extends AppCompatDialog {
     private boolean isAnimationIng = false;
 
     public BaseDialog(Context context) {
-        this(context, R.style.AppCompatDialog_Common);
+        this(context, R.style.Resource_AppCompatDialog_Common);
     }
 
     public BaseDialog(Context context, int theme) {

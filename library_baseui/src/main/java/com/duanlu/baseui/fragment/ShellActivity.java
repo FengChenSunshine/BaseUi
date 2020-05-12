@@ -131,9 +131,8 @@ public class ShellActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (null == mFragmentInstance
-                || (mFragmentInstance instanceof RootFragment && !((RootFragment) mFragmentInstance).dispatchOnBackPressed())
-                || (mFragmentInstance instanceof BaseLazyFragment && !((BaseLazyFragment) mFragmentInstance).dispatchOnBackPressed())
-        ) {
+                || (mFragmentInstance instanceof RootFragment
+                && !((RootFragment) mFragmentInstance).dispatchOnBackPressed())) {
             super.onBackPressed();
         }
     }

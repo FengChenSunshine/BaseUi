@@ -6,12 +6,11 @@
 
     <com.duanlu.baseui.widget.CommonToolbar
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize" />
+        style="@style/Toolbar.Common" />
 
     <View
         android:id="@+id/view_toolbar_divider"
-        style="@style/divider_toolbar_content"
+        style="@style/resource_divider_toolbar_content"
         android:visibility="gone" />
 
     <FrameLayout

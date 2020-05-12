@@ -55,4 +55,6 @@ dependencies {
     api library.uiStatus
     //资源库.
     api library.resource
+    //RecyclerView适配器.
+    api library.adapter
 }

@@ -1,9 +1,10 @@
 package com.duanlu.baseui.activity;
 
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.annotation.CallSuper;
 import androidx.annotation.NonNull;
-import android.view.View;
 
 import com.duanlu.baseui.R;
 
@@ -20,7 +21,12 @@ public abstract class BaseActivity extends RootActivity {
     @CallSuper
     @Override
     public void parseIntentBundle(@NonNull Bundle bundle) {
+        //nothing.
+    }
 
+    @Override
+    public boolean useDefaultToolbar() {
+        return true;
     }
 
     @Override
@@ -36,11 +42,6 @@ public abstract class BaseActivity extends RootActivity {
     @Override
     public Object getUiStatusControllerTarget() {
         return useDefaultToolbar() ? findViewById(R.id.fl_container) : this;
-    }
-
-    @Override
-    public boolean useDefaultToolbar() {
-        return true;
     }
 
 }

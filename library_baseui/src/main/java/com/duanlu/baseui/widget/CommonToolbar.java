@@ -56,7 +56,7 @@ public class CommonToolbar extends Toolbar {
 
     private void initView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         TypedArray typedArray;
-        int[] attrsArrayIcon = {R.attr.common_navigation_icon};
+        int[] attrsArrayIcon = {R.attr.resourceNavigationIcon};
         typedArray = context.obtainStyledAttributes(attrsArrayIcon);
         int navigationIconResId = typedArray.getResourceId(0, 0);
         typedArray.recycle();

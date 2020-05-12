@@ -12,6 +12,10 @@ public class BaseConstants {
 
     public static final String EXTRA_TITLE = "extra_title";//传递标题.
     public static final String EXTRA_ORIENTATION = "extra_orientation";//传递屏幕方向.
+
+    public static final String EXTRA_MODEL = "extra_model";//传递数据对象.
+    public static final String EXTRA_ID = "extra_id";//传递数据ID.
+
     public static final String EXTRA_THEME_RES_ID = "extra_theme_res_id";//传递主题.
     public static final String EXTRA_FRAGMENT_CLASS_NAME = "extra_fragment_class_name";//传递Fragment类名到ShellActivity.
 
